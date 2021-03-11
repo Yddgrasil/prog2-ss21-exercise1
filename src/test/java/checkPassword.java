@@ -100,14 +100,14 @@ public class checkPassword {
     @Test
     public void PasswordIllegalSpecialCharacter€(){
         String PasswordWrongSpecialCharacter ="sadjfkhR%hj5Dhkjds€jf@";
-        assertTrue(Password.checkPassword(PasswordWrongSpecialCharacter));
+        assertFalse(Password.checkPassword(PasswordWrongSpecialCharacter));
     }
 
     @Test
     public void PasswordIllegalgSpecialCharacterTilde(){
         String PasswordWrongSpecialCharacter ="sadjfkhR%hj5D~hkjds€jf@";
 
-        assertTrue(Password.checkPassword(PasswordWrongSpecialCharacter));
+        assertFalse(Password.checkPassword(PasswordWrongSpecialCharacter));
     }
 
 

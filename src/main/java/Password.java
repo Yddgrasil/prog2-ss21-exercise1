@@ -21,11 +21,15 @@
             }
 
             boolean containsSpecialCharacter = false;
-
             for (char c : password.toCharArray()) {
-                if (")#$?!%/@".indexOf(c) >= 0) {
-                    containsSpecialCharacter = true;
+                if(Character.isLetter(c) || Character.isDigit(c)) {
+                    continue;
                 }
+                    if (")#$?!%/@".indexOf(c) >= 0) {
+                        containsSpecialCharacter = true;
+                    }
+                    else
+                        return false;
 
 
             }
