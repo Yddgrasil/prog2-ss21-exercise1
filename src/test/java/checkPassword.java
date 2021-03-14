@@ -98,7 +98,7 @@ public class checkPassword {
 
 
     @Test
-    public void PasswordIllegalSpecialCharacter€(){
+    public void PasswordIllegalSpecialCharacterEuro(){
         String PasswordWrongSpecialCharacter ="sadjfkhR%hj5Dhkjds€jf@";
         assertFalse(Password.checkPassword(PasswordWrongSpecialCharacter));
     }
