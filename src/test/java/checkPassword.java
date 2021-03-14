@@ -110,19 +110,64 @@ public class checkPassword {
         assertFalse(Password.checkPassword(PasswordWrongSpecialCharacter));
     }
 
+    @Test
+    public void PasswordIllegalgSpecialCharacterSmallerThan(){
+        String PasswordWrongSpecialCharacter ="sadjfkhR%hj5D~h<kjds€jf@";
+
+        assertFalse(Password.checkPassword(PasswordWrongSpecialCharacter));
+    }
+
+    @Test
+    public void PasswordIllegalgSpecialCharacterBiggerThan(){
+        String PasswordWrongSpecialCharacter ="sadjfkhR%hj>5D~h<kjds€jf@";
+
+        assertFalse(Password.checkPassword(PasswordWrongSpecialCharacter));
+    }
 
 
+    @Test
+    public void PasswordWithConsecutiveNumbers(){
+        String PasswordConsecutive ="sadjfkhR%hj>5D~h<123kjds€jf@";
 
-   /* public void PasswordHasConsecutiveNumbers(){
+        assertFalse(Password.checkPassword(PasswordConsecutive));
+    }
+
+    @Test
+    public void PasswordNoConsecutiveNumbers(){
+        String PasswordConsecutive ="sadjfkhR%hj>5D~h<132kjds€jf@";
+
+        assertFalse(Password.checkPassword(PasswordConsecutive));
+    }
+
+
+    public void PasswordHasConsecutiveNumbers(){
         String PasswordWithConsecutiveNumbers="hasdkjfhs@A5jksadfk123";
-        String PasswordWithNoConsecutiveNumbers="ufasidfuJUKJ@8901jdk";
 
-        assertTrue(Password.checkPassword(PasswordWithNoConsecutiveNumbers));
         assertFalse(Password.checkPassword(PasswordWithConsecutiveNumbers));
 
     }
 
+    public void PasswordHasNoConsecutiveNumbers(){
+        String PasswordWithNoConsecutiveNumbers="ufasidfuJUKJ@8901jdk";
 
-    */
+        assertTrue(Password.checkPassword(PasswordWithNoConsecutiveNumbers));
+
+
+    }
+
+    public void PasswordHasNoSameNumbers(){
+        String PasswordWithNoConsecutiveNumbers="ufasidfuJUK111J@8901jdk";
+
+        assertTrue(Password.checkPassword(PasswordWithNoConsecutiveNumbers));
+
+    }
+
+    public void PasswordHasSameNumbers(){
+        String PasswordWithConsecutiveNumbers="hasdkj1111fhs@A5jksadfk123";
+
+        assertFalse(Password.checkPassword(PasswordWithConsecutiveNumbers));
+
+    }
+
 
 }
